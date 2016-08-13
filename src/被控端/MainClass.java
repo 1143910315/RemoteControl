@@ -2,6 +2,7 @@ package 被控端;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.io.IOException;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -12,18 +13,18 @@ import 公用包.Jianting;
 import 公用包.Tongzhi;
 
 public class MainClass extends JFrame implements Tongzhi {
-
+	
 	private static final long	serialVersionUID	= 3622852656492653512L;
 	JLabel						aJLabel;
 	JTextField					aJTextField;
 	JButton						aJButton;
-
-	public static void main(String[] args) {
+	
+	public static void main(String[] args) throws IOException {
 		MainClass jFrame = new MainClass();
 		jFrame.Initialize();
 	}
-	
-	private void Initialize() {
+
+	private void Initialize() throws IOException {
 		setSize(400, 60);
 		setLocationRelativeTo(null);
 		setTitle("远程控制--被控端  by 吞噬¢  QQ1143910315");
@@ -37,7 +38,7 @@ public class MainClass extends JFrame implements Tongzhi {
 		setVisible(true);
 		new Jianting(this);
 	}
-	
+
 	private void setUI1() {
 		GridBagConstraints aGridBagConstraints = new GridBagConstraints();
 		aGridBagConstraints.anchor = GridBagConstraints.BASELINE_LEADING;
