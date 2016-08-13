@@ -1,4 +1,4 @@
-package 远程控制;
+package 控制端;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
@@ -11,7 +11,9 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class MainClass extends JFrame {
+import 公用包.Tongzhi;
+
+public class MainClass extends JFrame implements Tongzhi {
 
 	private static final long	serialVersionUID	= -2499232216521027524L;
 	JLabel						aJLabel;
@@ -28,7 +30,7 @@ public class MainClass extends JFrame {
 	private void Initialize() {
 		Double aDouble = Toolkit.getDefaultToolkit().getScreenSize().getWidth() / 1.5;
 		Double bDouble = Toolkit.getDefaultToolkit().getScreenSize().getHeight() / 1.5;
-		this.setSize(aDouble.intValue(), bDouble.intValue());
+		setSize(aDouble.intValue(), bDouble.intValue());
 		setLocationRelativeTo(null);
 		setTitle("远程控制--控制端  by 吞噬¢  QQ1143910315");
 		aJLabel = new JLabel("IP地址：");
@@ -38,10 +40,10 @@ public class MainClass extends JFrame {
 		bJLabel.setIcon(new ImageIcon("E:\\QQ图片20160812121902.jpg"));
 		aScrollPane = new ScrollPane(ScrollPane.SCROLLBARS_AS_NEEDED);
 		aScrollPane.add(bJLabel);
-		this.add(aJButton);
-		this.add(aJLabel);
-		this.add(aJTextField);
-		this.add(aScrollPane);
+		add(aJButton);
+		add(aJLabel);
+		add(aJTextField);
+		add(aScrollPane);
 		setUI1();
 		setVisible(true);
 	}
@@ -62,16 +64,14 @@ public class MainClass extends JFrame {
 		aGridBagLayout.setConstraints(aScrollPane, aGridBagConstraints);
 		setLayout(aGridBagLayout);
 	}
-
-	private void setUI2() {
-		GridBagConstraints aGridBagConstraints = new GridBagConstraints();
-		aGridBagConstraints.anchor = GridBagConstraints.BASELINE_LEADING;
-		aGridBagConstraints.fill = GridBagConstraints.BOTH;
-		aGridBagConstraints.weightx = 1;
-		aGridBagConstraints.weighty = 1;
-		GridBagLayout aGridBagLayout = new GridBagLayout();
-		aGridBagLayout.setConstraints(aScrollPane, aGridBagConstraints);
-		setLayout(aGridBagLayout);
-	}
-
+	// private void setUI2() {
+	// GridBagConstraints aGridBagConstraints = new GridBagConstraints();
+	// aGridBagConstraints.anchor = GridBagConstraints.BASELINE_LEADING;
+	// aGridBagConstraints.fill = GridBagConstraints.BOTH;
+	// aGridBagConstraints.weightx = 1;
+	// aGridBagConstraints.weighty = 1;
+	// GridBagLayout aGridBagLayout = new GridBagLayout();
+	// aGridBagLayout.setConstraints(aScrollPane, aGridBagConstraints);
+	// setLayout(aGridBagLayout);
+	// }
 }
