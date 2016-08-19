@@ -45,6 +45,7 @@ public class MainClass extends JFrame implements Tongzhi {
 		add(aJTextField);
 		add(aScrollPane);
 		setUI1();
+		aJButton.addMouseListener(new Kongzhi(aJButton, aJTextField));
 		setVisible(true);
 	}
 
@@ -64,6 +65,7 @@ public class MainClass extends JFrame implements Tongzhi {
 		aGridBagLayout.setConstraints(aScrollPane, aGridBagConstraints);
 		setLayout(aGridBagLayout);
 	}
+
 	// private void setUI2() {
 	// GridBagConstraints aGridBagConstraints = new GridBagConstraints();
 	// aGridBagConstraints.anchor = GridBagConstraints.BASELINE_LEADING;
@@ -74,4 +76,13 @@ public class MainClass extends JFrame implements Tongzhi {
 	// aGridBagLayout.setConstraints(aScrollPane, aGridBagConstraints);
 	// setLayout(aGridBagLayout);
 	// }
+	@Override
+	public boolean shoudao(int zhuangtai) {
+		return false;
+	}
+	
+	@Override
+	public boolean shuju(byte[] b) {
+		return false;
+	}
 }

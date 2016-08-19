@@ -50,4 +50,14 @@ public class MainClass extends JFrame implements Tongzhi {
 		aGridBagLayout.setConstraints(aJTextField, aGridBagConstraints);
 		setLayout(aGridBagLayout);
 	}
+
+	@Override
+	public boolean shoudao(int zhuangtai) {
+		return false;
+	}
+	
+	@Override
+	public boolean shuju(byte[] b) {
+		return false;
+	}
 }

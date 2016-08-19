@@ -1,6 +1,7 @@
 package 公用包;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -28,11 +29,27 @@ public class Jianting {
 	}
 
 	void lianjie() {
-		if (aServerSocket.isClosed() != true) {
+		while (aServerSocket.isClosed() != true) {
 			try {
 				Socket aSocket = aServerSocket.accept();
 				if (aSocket != null && aSocket.isClosed()) {
-
+					InputStream aInputStream = aSocket.getInputStream();
+					int a = aInputStream.read();
+					if (a != -1) {
+						if (aTongzhi.shoudao(a)) {
+							byte[] b = new byte[500];
+							a = aInputStream.read(b);
+							while (a != -1) {
+								if (a > 0) {
+									if (aTongzhi.shuju(b) == false) {
+										break;
+									}
+								}
+								a = aInputStream.read(b);
+							}
+						}
+					}
+					aSocket.close();
 				}
 			} catch (IOException e) {
 				e.printStackTrace();
